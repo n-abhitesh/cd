@@ -25,7 +25,7 @@ DELIMITER   [()[\]{},;]
                             printf("Keyword: %s\n\n", yytext);
                             is_keyword = 1;
                             break;
-                        }]
+                        }}
 
                     }
 
