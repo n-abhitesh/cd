@@ -131,3 +131,19 @@ int F() {
         return FAILED;
 }
 
+
+
+
+"""
+
+Before removing left recursion After removing left recursion
+E->E+T|T
+T->T*F|F
+F-> (E)|id
+After removing LR
+E->TE'
+E'->+ TE'|e
+T->FT'
+T'->*FT'|e
+F->(E)|id
+"""
