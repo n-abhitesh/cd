@@ -11,7 +11,10 @@ void capitalize(char * str)
     printf("%s",str);
 }
 
-
+void func(char *  str){
+	str[0]=toupper(str[0]);
+	printf("%s",str);
+}
 
 %}
 
@@ -19,7 +22,7 @@ STRING [a-zA-Z]+
 
 
 %%
-. {capitalize(yytext);}
+. {func(yytext);}
 %%
 
 
