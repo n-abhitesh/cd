@@ -6,7 +6,7 @@
 
 void tokenize(char input[]) {
     char *token;
-    token = strtok(input, " ,.?!"); // split by space, comma, period, question mark, or exclamation mark
+    token = strtok(input, " ,.?!"); 
 
     while(token != NULL) {
         printf("%s\n", token);
