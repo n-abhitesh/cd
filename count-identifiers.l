@@ -73,7 +73,9 @@ int main() {
     printf("Identifier Count = %d\n",idCount);
     return 0;
 }
-
+int yywrap() {
+    return 1;
+}
 
 /*
 
@@ -128,7 +130,5 @@ int yywrap() {
 }
 */
 
-int yywrap() {
-    return 1;
-}
+
 
