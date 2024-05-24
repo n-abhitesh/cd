@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-
 #define MAX_LEN 100
 
 void tokenize(char input[]) {
     char *token;
-    token = strtok(input, " ,.?!"); 
+    token = strtok(input, " ,.?!");
 
     while(token != NULL) {
         printf("%s\n", token);
@@ -16,16 +15,22 @@ void tokenize(char input[]) {
 
 int main() {
     char input[MAX_LEN];
-    printf("Enter a sentence: ");
-    fgets(input, MAX_LEN, stdin);
+    FILE *file;
 
-    // Remove newline character if present
-    if(input[strlen(input) - 1] == '\n') {
-        input[strlen(input) - 1] = '\0';
+
+    file = fopen("character_lexenes_input.txt", "r");
+
+    while (fgets(input, MAX_LEN, file) != NULL) {
+        // Remove newline character if present
+        if (input[strlen(input) - 1] == '\n') {
+            input[strlen(input) - 1] = '\0';
+        }
+
+        tokenize(input);
     }
 
-    tokenize(input);
+    // Close the file
+    fclose(file);
 
     return 0;
 }
-
